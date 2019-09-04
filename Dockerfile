@@ -22,9 +22,9 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 # Install nodejs
-RUN apt-get install software-properties-common \
+RUN apt-get install -y software-properties-common \
     curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
 
-RUN apt-get install nodejs
+RUN apt-get install -y nodejs
 
 RUN npm install -g grunt-cli
