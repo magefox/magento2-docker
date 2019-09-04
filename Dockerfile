@@ -23,7 +23,7 @@ RUN mv composer.phar /usr/local/bin/composer
 
 # Install nodejs
 RUN apt-get install -y software-properties-common \
-    curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+    curl -sL https://deb.nodesource.com/setup_10.x | bash -
 
 RUN apt-get install -y nodejs
 
