@@ -2,6 +2,8 @@ FROM php:7.1-apache
 
 MAINTAINER Magefox <magefoxtech@gmail.com>
 
+RUN a2enmod rewrite
+
 RUN apt-get update && apt-get install -y \
     zip \
     libcurl3-dev \
