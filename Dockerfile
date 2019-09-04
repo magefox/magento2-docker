@@ -2,8 +2,10 @@ FROM php:7.1-apache
 
 MAINTAINER Magefox <magefoxtech@gmail.com>
 
+# Enable mode_rewrite
 RUN a2enmod rewrite
 
+# Install php extensions
 RUN apt-get update && apt-get install -y \
     zip \
     libcurl3-dev \
@@ -18,3 +20,11 @@ RUN apt-get update && apt-get install -y \
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
+
+# Install nodejs
+RUN apt-get install software-properties-common \
+    curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+
+RUN apt-get install nodejs
+
+RUN npm install -g grunt-cli
